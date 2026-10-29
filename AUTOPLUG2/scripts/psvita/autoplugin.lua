@@ -276,6 +276,8 @@ function plugins_installation(obj)
 		--Copy Extra Plugin (section2 & Path2)
 		if obj.path2 then files.copy(path_plugins..obj.path2, path_tai) end
 		if obj.section2 then tai.put(obj.section2, path_tai..obj.path2)	end
+		--path2 also loaded in a third section (section3), e.g. a plugin's Settings page in NPXS10015
+		if obj.section3 and obj.path2 then tai.put(obj.section3, path_tai..obj.path2) end
 
 		--Extra
 		if obj.path == "vsh.suprx" then files.delete("ur0:/data:/vsh/")
@@ -466,7 +468,9 @@ function autoplugin()
 				screen.print(950, 457, tb_cop[scr.sel].path,1,color.yellow, 0x0,__ARIGHT)
 			end
 			if tb_cop[scr.sel].section2 then
-				screen.print(950, 482, tb_cop[scr.sel].section2,1,color.yellow, 0x0,__ARIGHT)
+				local sections2 = tb_cop[scr.sel].section2
+				if tb_cop[scr.sel].section3 then sections2 = sections2.." + "..tb_cop[scr.sel].section3 end
+				screen.print(950, 482, sections2,1,color.yellow, 0x0,__ARIGHT)
 			end
 			if tb_cop[scr.sel].path2 then
 				screen.print(950, 502, tb_cop[scr.sel].path2,1,color.yellow, 0x0,__ARIGHT)

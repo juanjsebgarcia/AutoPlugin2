@@ -114,6 +114,7 @@ function plugin_info(obj)
 
 	--tai config
 	if obj.section2 then obj.idx = tai.find(obj.section2,obj.path2) end
+	if obj.section3 and obj.path2 then obj.idx3 = tai.find(obj.section3,obj.path2) end
 	if obj.idx != nil then
 		--if files.exists(tai.gameid[ obj.section2 ].prx[obj.idx].path) then	end
 	end
@@ -218,6 +219,16 @@ function plugin_info(obj)
 		if obj.path2 and obj.section2 then
 			y+=20
 			if obj.idx then
+				screen.print(15, y, obj.path2,1,color.green,0x0,__ALEFT)
+			else
+				screen.print(15, y, obj.path2,1,color.yellow,0x0,__ALEFT)
+			end
+		end
+		if obj.path2 and obj.section3 then
+			y+=20
+			screen.print(15, y, "[ "..obj.section3.." ]",1,color.white,0x0,__ALEFT)
+			y+=20
+			if obj.idx3 then
 				screen.print(15, y, obj.path2,1,color.green,0x0,__ALEFT)
 			else
 				screen.print(15, y, obj.path2,1,color.yellow,0x0,__ALEFT)

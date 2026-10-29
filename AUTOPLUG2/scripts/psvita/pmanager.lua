@@ -244,6 +244,7 @@ function pluginsmanager()
 
 					local section2 = ""
 					local path2 = ""
+					local section3 = ""
 
 					if plugs[sections[over]][scroll.sel].file:lower() == "vitanearestneighbour.suprx" then
 						local idx3 = searchPlugByPath(plugs, sections[over], "vitanearestneighbour.suprx")
@@ -264,6 +265,9 @@ function pluginsmanager()
 								section2 = plugs[sections[over]][scroll.sel].bridge.section2
 								path2 = plugs[sections[over]][scroll.sel].bridge.path2:lower()
 								--os.message("bridge2: "..path2.."\n"..section2)
+								if plugs[sections[over]][scroll.sel].bridge.section3 then
+									section3 = plugs[sections[over]][scroll.sel].bridge.section3
+								end
 							end
 						end
 
@@ -337,6 +341,16 @@ function pluginsmanager()
 								table.remove(plugs[section2], idx3)
 								bridge_n[path2][section2] = nil
 							end
+						end
+					end
+
+					--path2 in section3 (e.g. a plugin's Settings page in NPXS10015)
+					if section3 != "" and bridge_n[path2] and bridge_n[path2][section3] then
+						local idx4 = searchPlugByPath(plugs, section3, path2)
+						if idx4 then
+							tai.del(section3, plugs[section3][idx4].path)
+							table.remove(plugs[section3], idx4)
+							bridge_n[path2][section3] = nil
 						end
 					end
 
