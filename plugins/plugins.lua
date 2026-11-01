@@ -180,7 +180,7 @@ Online_Plugins = {
 { name = "vita-turbo-storage by juanjsebgarcia", id = "TURBOSTORAGE.png", path = "storageturbo_kernel.skprx", section = "KERNEL", path2 = "storageturbo.suprx", section2 = "main", section3 = "NPXS10015", desc = LANGUAGE["INSTALLP_DESC_TURBOSTORAGE"], KEY = "INSTALLP_DESC_TURBOSTORAGE",
   crc = 0x669b6f9d, v = "v0.3.0", crc2 = 0x31b23a9b, version = "0001", link = "https://raw.githubusercontent.com/juanjsebgarcia/vita-turbo-storage/main/README.md", },
 { name = "vita-turbo-wifi by juanjsebgarcia", id = "WIFITURBO.png", path = "wifiturbo_kernel.skprx", section = "KERNEL", path2 = "wifiturbo.suprx", section2 = "main", section3 = "NPXS10015", desc = LANGUAGE["INSTALLP_DESC_WIFITURBO"], KEY = "INSTALLP_DESC_WIFITURBO",
-  crc = 0xf362d71e, v = "v0.5.0", crc2 = 0x099e4501, version = "0001", link = "https://raw.githubusercontent.com/juanjsebgarcia/vita-turbo-wifi/main/README.md", },
+  crc = 0x0209c060, v = "v0.5.1", crc2 = 0x733ecaef, version = "0001", link = "https://raw.githubusercontent.com/juanjsebgarcia/vita-turbo-wifi/main/README.md", },
 
 --Main [SECTION]
 { name = "NoTrpDrm by Rinnegatamante", id = "NOTRPDRM.png", path = "NoTrpDrm.suprx", section = "main", desc = LANGUAGE["INSTALLP_DESC_NOTRPDRM"], KEY = "INSTALLP_DESC_NOTRPDRM",
